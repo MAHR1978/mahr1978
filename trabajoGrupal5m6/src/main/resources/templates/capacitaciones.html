@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http:www.themyleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="container">
+	    <header>
+			<div th:include="header/menu.html"></div>
+			<h1>Listado de capacitaciones</h1>
+		</header>
+	   <table class="table">
+		   <tr class="table-dark">
+			  
+				   <td>id</td>
+				   <td>nombre</td>
+				   <td>detalle</td>
+			</tr>
+			<tbody>
+				<tr th:each="capacitacion : ${capacitacion}">
+					
+						<td th:text="${capacitacion.id}"></td>
+						<td th:text="${capacitacion.nombre}"></td>
+						<td th:text="${capacitacion.detalle}"></td>				
+				</tr>	
+			</tbody>
+</body>
+</html>

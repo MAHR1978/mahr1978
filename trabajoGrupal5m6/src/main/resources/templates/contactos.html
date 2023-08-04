@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http:www.themyleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+	<div class="container">
+	    <header>
+			<div th:include="header/menu.html"></div>
+			<h1>Listado de Contactos</h1>
+		</header>
+	   <table class="table">
+		   <tr class="table-dark">
+			  
+				   <td>Nombre</td>
+				   <td>Apellido</td>
+				   <td>Teléfono</td>
+				   <td>Email</td>
+				   <td>Mensaje</td>
+			
+			   
+			</tr>
+			<tbody>
+				<tr th:each="contacto : ${contactos}">
+					
+						<td th:text="${contacto.nombre}"></td>
+						<td th:text="${contacto.apellido}"></td>
+						<td th:text="${contacto.telefono}"></td>
+						<td th:text="${contacto.email}"></td>
+						<td th:text="${contacto.mensaje}"></td>
+						
+				
+				</tr>	
+			</tbody>
+		   
+		   
+		   
+	   </table>
+	    
+	        <!-- Utilizando Thymeleaf para iterar sobre los contactos -->
+	        <!--<li th:each="contacto : ${contactos}">
+	            Nombre: <span th:text="${contacto.nombre}"></span><br>
+	            Apellido: <span th:text="${contacto.apellido}"></span><br>
+	            Teléfono: <span th:text="${contacto.telefono}"></span><br>
+	            Email: <span th:text="${contacto.email}"></span><br>
+	            Mensaje: <span th:text="${contacto.mensaje}"></span><br>
+	            <br>
+	        </li>-->
+	    
+    </div>
+</body>
+</html>
