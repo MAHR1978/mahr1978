@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html  xmlns:th="http:www.themyleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Ingreso de contacto</title>
+<script type="text/javascript">
+	function soloprueba(){
+		alert("es solo de prueba !!!")
+	}
+	
+	
+</script>
+</head>
+<body>
+	<div class="container">
+		<div th:include="header/menu.html"></div>
+		<a th:href="@{/contacto/all}">listar contacto</a>
+		<form action="" method="">
+		<table class="table">
+			<tr>
+				<td>nombre</td>
+				<td><input type="text" class="form-control" name="" /></td>
+			</tr>
+			<tr>
+				<td>apellido</td>
+				<td><input type="text" class="form-control" name="" /></td>
+			</tr>
+			<tr>
+				<td>email</td>
+				<td><input type="text" class="form-control" name="" /></td>
+			</tr>
+			<tr>
+				<td>telefono</td>
+				<td><input type="text" class="form-control" name="" /></td>
+			</tr>
+		</table>
+		<input type="" class="btn btn-primary" value="enviar" onclick="soloprueba()" />
+	</form>
+	</div>
+	
+</body>
+</html>
