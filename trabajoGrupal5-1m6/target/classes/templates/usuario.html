@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http:www.themyleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Listado de usuarios</title>
+</head>
+<body>
+	<div class="container">
+	    <header>
+			<div th:include="header/menu.html"></div>
+			<h1>Listado de usuarios</h1>
+		</header>
+	   <table class="table">
+		   <tr class="table-dark">
+				<td>id</td>
+				<td>nombre</td>
+				<td>tipo</td>
+				<td>rut</td>
+			</tr>
+			<tbody>
+				<tr th:each="usuarios : ${usuarios}">
+					
+						<td th:text="${usuarios.id}"></td>
+						<td th:text="${usuarios.nombre}"></td>
+						<td th:text="${usuarios.tipo}"></td>
+						<td th:text="${usuarios.rut}"></td>				
+				</tr>	
+			</tbody>
+</body>
+</html>

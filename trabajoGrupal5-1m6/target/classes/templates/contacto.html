@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Ingreso de contacto</title>
+<script type="text/javascript">
+	function soloprueba(){
+		alert("es solo de prueba !!!")
+	}
+	 function enviarFormulario() {
+        var form = document.getElementById("contactForm");
+        var formData = new FormData(form);
+        
+        var contactoObject = {
+            nombre: formData.get("nombre"),
+            apellido: formData.get("apellido"),
+            email: formData.get("email"),
+            telefono: formData.get("telefono"),
+            mensaje: formData.get("mensaje")
+        };
+        
+        fetch("/contacto/add", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(contactoObject)
+        })
+        .then(response => {
+			alert(response)
+            if (response.ok) {
+				
+				 window.location.href="/contacto/all";
+                alert("Contacto enviado correctamente");
+               
+                // Realizar redirección o acciones adicionales si es necesario
+            } else {
+                alert("Hubo un error al enviar el contacto");
+                
+            }
+        });
+    }
+	
+	
+	
+</script>
+</head>
+<body>
+	<div class="container">
+		<div th:include="header/menu.html"></div>
+		<a th:href="@{/contacto/all}">listar contacto</a>|<a th:href="@{/contacto/actualiza}">actualizar contacto</a>
+		<form  id="contactForm">
+		<table class="table">
+			<tr>
+				<td>nombre</td>
+				<td><input type="text" class="form-control" name="nombre"  required></input></td>
+			</tr>
+			<tr>
+				<td>apellido</td>
+				<td><input type="text" class="form-control" name="apellido"  required /></td>
+			</tr>
+			<tr>
+				<td>email</td>
+				<td><input type="text" class="form-control" name="email"  required /></td>
+			</tr>
+			<tr>
+				<td>telefono</td>
+				<td><input type="text" class="form-control" name="telefono"  required /></td>
+			</tr>
+			<tr>
+				<td>mensaje</td>
+				<td><textarea type="text" class="form-control" name="mensaje"  required ></textarea></td>
+			</tr>
+		</table>
+		<input type="button" class="btn btn-primary" value="enviar" onclick="enviarFormulario()" />
+	</form>
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http:www.themyleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Ingresar Capacitacion</title>
+	
+	<script type="text/javascript">
+		
+		function soloprueba(){
+			alert("es solo de prueba !!!")
+		}	
+		
+	</script>
+	
+</head>
+<body>
+	<div class="container">
+		<div th:include="header/menu.html"></div>
+		<a th:href="@{/capacitaciones/all}">listar capacitacion</a>
+		<form action="" method="">
+		<table class="table">
+			<tr>
+				<td>nombre relator</td>
+				<td><input type="text" class="form-control" name="" /></td>
+			</tr>
+			<tr>
+				<td>nombre capacitacion</td>
+				<td><input type="text" class="form-control" name="" /></td>
+			</tr>
+			<tr>
+				<td>cantidad participantes</td>
+				<td><input type="text" class="form-control" name="" /></td>
+			</tr>
+			<tr>
+				<td>lugar capacitacion</td>
+				<td><input type="text" class="form-control" name="" /></td>
+			</tr>
+		</table>
+		<input type="" class="btn btn-primary" value="enviar" onclick="soloprueba()" />
+	</form>
+	</div>
+	</div>
+</body>
+</html>

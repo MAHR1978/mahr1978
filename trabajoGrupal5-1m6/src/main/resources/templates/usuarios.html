@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http:www.themyleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Ingreso de usuarios</title>
+<script type="text/javascript">
+	function soloprueba(){
+		alert("es solo de prueba !!!")
+	}
+	
+	
+</script>
+</head>
+<body>
+	<div class="container">
+		<div th:include="header/menu.html"></div>
+		<a th:href="@{/usuarios/all}">listar usuarios</a>
+		<form>
+			<table class="table">
+				<tr>
+					<td>nombre</td>
+					<td><input type="text" name="nombre" class="form-control"/></td>
+				</tr>
+				<tr>
+					<td>tipo usuario</td>
+					<td><select name="tipo_usuario"class="form-control">
+						<option>Seleccione.. </option>
+						<option>Cliente </option>
+						<option>Administrativo</option>
+						<option>Profesional</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>Rut</td>
+					<td><input type="text" name="rut" class="form-control" /></td>
+				</tr>			
+			</table>
+			<input type="button" class="btn btn-primary" value="enviar" onclick="soloprueba()" />
+		</form>
+	</div>
+</body>
+</html>
