@@ -30,13 +30,13 @@
 			alert(response)
             if (response.ok) {
 				
-				 window.location.href="/contacto/all";
                 alert("Contacto enviado correctamente");
                
                 // Realizar redirección o acciones adicionales si es necesario
             } else {
-                alert("Hubo un error al enviar el contacto");
+               // alert("Hubo un error al enviar el contacto");
                 
+				 window.location.href="/contacto/all";
             }
         });
     }
@@ -48,7 +48,7 @@
 <body>
 	<div class="container">
 		<div th:include="header/menu.html"></div>
-		<a th:href="@{/contacto/all}">listar contacto</a>|<a th:href="@{/contacto/actualiza}">actualizar contacto</a>
+		<a th:href="@{/contacto/all}">listar contacto</a><span>|</span><a th:href="@{/contacto/actualiza}">actualizar contacto</a>
 		<form  id="contactForm">
 		<table class="table">
 			<tr>

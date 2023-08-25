@@ -13,9 +13,9 @@ public class CapacitacionRowMapper implements RowMapper<Capacitacion>{
 		return new Capacitacion(
 				rs.getInt("id"),
 				rs.getString("nombre"),
-				rs.getString("detalle"),
 				rs.getInt("cantidad_participantes"),
-				rs.getString("lugar_capacitacion"));
+				rs.getString("lugar_capacitacion"),
+				rs.getString("nombre_capacitacion"));
 	}
 	
 

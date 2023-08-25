@@ -1,16 +1,19 @@
 package com.example.demo;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import com.example.demo.DAO.CapacitacionDAO;
 
 import com.example.demo.modelo.Capacitacion;
-
+import com.example.demo.modelo.Contacto;
 
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.annotation.Validated;
 
 @Controller
 public class ControladorCrearCapacitacion {
@@ -37,5 +40,10 @@ public class ControladorCrearCapacitacion {
 		List<Capacitacion> capacitacion = capacitacionDAO.findAll();
 		model.addAttribute("capacitacion", capacitacion);
 		return "capacitaciones";
+	}
+	@PostMapping(path = "/capacitaciones/add", consumes = "application/json")
+	public void addCapacitacion(@Validated @RequestBody  Capacitacion capacitacion) {
+		capacitacionDAO.addCapacitacion(capacitacion);
+		
 	}
 }

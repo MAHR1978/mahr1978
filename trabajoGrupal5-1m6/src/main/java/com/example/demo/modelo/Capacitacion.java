@@ -2,20 +2,21 @@ package com.example.demo.modelo;
 
 public class Capacitacion {
 	int id;
-	String nombre;
-	String detalle;
+	String nombre;	
 	int cantidad_participantes;
 	String lugar_capacitacion;
+	String nombre_capacitacion;
 	public Capacitacion() {
 		super();
 	}
-	public Capacitacion(int id, String nombre, String detalle, int cantidad_participantes, String lugar_capacitacion) {
+	public Capacitacion(int id, String nombre, int cantidad_participantes, String lugar_capacitacion,
+			String nombre_capacitacion) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
-		this.detalle = detalle;
 		this.cantidad_participantes = cantidad_participantes;
 		this.lugar_capacitacion = lugar_capacitacion;
+		this.nombre_capacitacion = nombre_capacitacion;
 	}
 	public int getId() {
 		return id;
@@ -29,12 +30,6 @@ public class Capacitacion {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public String getDetalle() {
-		return detalle;
-	}
-	public void setDetalle(String detalle) {
-		this.detalle = detalle;
-	}
 	public int getCantidad_participantes() {
 		return cantidad_participantes;
 	}
@@ -47,11 +42,18 @@ public class Capacitacion {
 	public void setLugar_capacitacion(String lugar_capacitacion) {
 		this.lugar_capacitacion = lugar_capacitacion;
 	}
+	public String getNombre_capacitacion() {
+		return nombre_capacitacion;
+	}
+	public void setNombre_capacitacion(String nombre_capacitacion) {
+		this.nombre_capacitacion = nombre_capacitacion;
+	}
 	@Override
 	public String toString() {
-		return "Capacitacion [id=" + id + ", nombre=" + nombre + ", detalle=" + detalle + ", cantidad_participantes="
-				+ cantidad_participantes + ", lugar_capacitacion=" + lugar_capacitacion + "]";
+		return "Capacitacion [id=" + id + ", nombre=" + nombre + ", cantidad_participantes=" + cantidad_participantes
+				+ ", lugar_capacitacion=" + lugar_capacitacion + ", nombre_capacitacion=" + nombre_capacitacion + "]";
 	}
+
 	
 	
 	

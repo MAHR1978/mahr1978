@@ -21,7 +21,7 @@ public class CapacitacionDAOImpl implements CapacitacionDAO{
 	@Override
 	public List<Capacitacion> findAll() {
 		String sql="""
-				Select id,nombre,detalle,cantidad_participantes,lugar_capacitacion
+				Select id,nombre,cantidad_participantes,lugar_capacitacion
 			 	from capacitaciones """;
 				return jdbcTemplate.query(sql, new CapacitacionRowMapper());
 		
@@ -47,8 +47,22 @@ public class CapacitacionDAOImpl implements CapacitacionDAO{
 
 	@Override
 	public long addCapacitacion(Capacitacion capacitacion) {
-		// TODO Auto-generated method stub
-		return 0;
+		String sql="""
+				insert into(nombre,cantidad_participantes,lugar_capacitacion,nombre_capacitacion)
+			 	values(?,?,?,?) """;
+				return jdbcTemplate.update(sql, 
+						capacitacion.getNombre(),						
+						capacitacion.getCantidad_participantes(),
+						capacitacion.getLugar_capacitacion(),
+						capacitacion.getNombre_capacitacion());
+					
 	}
 	
-}
+}/*
+
+*id
+nombre
+cantidad_participantes
+lugar_capacitacion
+nombre_capacitacion
+*/
